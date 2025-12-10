@@ -1,1 +1,333 @@
-<!DOCTYPE html><html lang="ru"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>OrenTEAM</title>    <style>        * {            margin: 0;            padding: 0;            box-sizing: border-box;        }                body {            font-family: 'Segoe UI', system-ui, sans-serif;            background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);            min-height: 100vh;            display: flex;            justify-content: center;            align-items: center;            overflow: hidden;            position: relative;        }                .green-circle {            position: absolute;            border-radius: 50%;            background: radial-gradient(circle, rgba(46, 125, 50, 0.15) 0%, rgba(46, 125, 50, 0.05) 70%);            animation: float 20s infinite ease-in-out;        }                .circle-1 {            width: 300px;            height: 300px;            top: -100px;            left: -100px;            animation-delay: 0s;        }                .circle-2 {            width: 200px;            height: 200px;            bottom: -50px;            right: -50px;            animation-delay: 5s;        }                .circle-3 {            width: 150px;            height: 150px;            top: 40%;            right: 10%;            animation-delay: 10s;        }                .content {            text-align: center;            z-index: 10;            padding: 40px;            max-width: 800px;            background-color: rgba(255, 255, 255, 0.92);            border-radius: 24px;            box-shadow: 0 20px 60px rgba(46, 125, 50, 0.15);            position: relative;            overflow: hidden;            border: 1px solid rgba(46, 125, 50, 0.1);        }                .logo {            font-size: 4rem;            font-weight: 800;            color: #2e7d32;            margin-bottom: 40px;            letter-spacing: 2px;            position: relative;            display: inline-block;        }                .logo::after {            content: '';            position: absolute;            bottom: -10px;            left: 50%;            transform: translateX(-50%);            width: 120px;            height: 4px;            background: linear-gradient(to right, #2e7d32, #4caf50);            border-radius: 2px;        }                .message {            font-size: 2.5rem;            color: #333;            margin-bottom: 30px;            line-height: 1.4;            font-weight: 300;        }                .highlight {            color: #2e7d32;            font-weight: 600;            position: relative;            display: inline-block;        }                .highlight::after {            content: '';            position: absolute;            bottom: 2px;            left: 0;            width: 100%;            height: 6px;            background-color: rgba(76, 175, 80, 0.2);            z-index: -1;            border-radius: 3px;        }                .bot-icon {            font-size: 6rem;            color: #2e7d32;            margin-bottom: 40px;            display: inline-block;            animation: bounce 3s infinite ease-in-out;        }                .soon-container {            display: inline-block;            margin-top: 30px;            padding: 15px 40px;            background: linear-gradient(to right, #2e7d32, #4caf50);            color: white;            border-radius: 50px;            font-size: 1.8rem;            font-weight: 600;            letter-spacing: 1px;            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);            animation: pulse 2s infinite;            position: relative;            overflow: hidden;        }                .soon-container::before {            content: '';            position: absolute;            top: 0;            left: -100%;            width: 100%;            height: 100%;            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);            transition: 0.5s;            animation: shine 3s infinite;        }                .decoration {            position: absolute;            width: 100px;            height: 100px;            opacity: 0.1;        }                .decoration-1 {            top: 20px;            left: 20px;            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;            background-color: #2e7d32;            animation: morph 8s infinite ease-in-out;        }                .decoration-2 {            bottom: 20px;            right: 20px;            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;            background-color: #4caf50;            animation: morph 10s infinite ease-in-out reverse;        }                .leaf {            position: absolute;            color: #4caf50;            font-size: 2rem;            opacity: 0.3;            z-index: 1;        }                .leaf-1 {            top: 10%;            left: 5%;            animation: sway 15s infinite ease-in-out;        }                .leaf-2 {            bottom: 15%;            right: 8%;            animation: sway 18s infinite ease-in-out reverse;        }                /* Анимации */        @keyframes float {            0%, 100% {                transform: translate(0, 0) rotate(0deg);            }            25% {                transform: translate(20px, 30px) rotate(5deg);            }            50% {                transform: translate(-15px, 15px) rotate(-5deg);            }            75% {                transform: translate(10px, -10px) rotate(3deg);            }        }                @keyframes bounce {            0%, 100% {                transform: translateY(0);            }            50% {                transform: translateY(-20px);            }        }                @keyframes pulse {            0%, 100% {                transform: scale(1);                box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);            }            50% {                transform: scale(1.05);                box-shadow: 0 15px 40px rgba(46, 125, 50, 0.4);            }        }                @keyframes shine {            0% {                left: -100%;            }            100% {                left: 100%;            }        }                @keyframes morph {            0%, 100% {                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;            }            25% {                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;            }            50% {                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;            }            75% {                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;            }        }                @keyframes sway {            0%, 100% {                transform: rotate(0deg);            }            25% {                transform: rotate(10deg);            }            75% {                transform: rotate(-10deg);            }        }                /* Адаптивность */        @media (max-width: 768px) {            .content {                padding: 30px 20px;                margin: 20px;            }                        .logo {                font-size: 3rem;            }                        .message {                font-size: 1.8rem;            }                        .bot-icon {                font-size: 4rem;            }                        .soon-container {                font-size: 1.5rem;                padding: 12px 30px;            }                        .circle-1, .circle-2, .circle-3 {                display: none;            }        }                @media (max-width: 480px) {            .logo {                font-size: 2.5rem;            }                        .message {                font-size: 1.5rem;            }                        .bot-icon {                font-size: 3rem;            }                        .soon-container {                font-size: 1.2rem;            }        }    </style>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></head><body>    <!-- Декоративные элементы фона -->    <div class="green-circle circle-1"></div>    <div class="green-circle circle-2"></div>    <div class="green-circle circle-3"></div>        <!-- Декоративные листья -->    <div class="leaf leaf-1">        <i class="fas fa-leaf"></i>    </div>    <div class="leaf leaf-2">        <i class="fas fa-leaf"></i>    </div>        <!-- Основной контент -->    <div class="content">        <!-- Декоративные элементы -->        <div class="decoration decoration-1"></div>        <div class="decoration decoration-2"></div>                <!-- Логотип компании -->        <div class="logo">OrenTEAM</div>                <!-- Иконка бота с анимацией -->        <div class="bot-icon">            <i class="fas fa-robot"></i>        </div>                <!-- Основное сообщение -->        <div class="message">            К сожалению <span class="highlight">этого бота</span> нет в наличии,<br>            но <span class="highlight">скоро будет</span>!        </div>                <!-- Анимированный блок "скоро" -->        <div class="soon-container">            СКОРО БУДЕТ!        </div>    </div>    <script>        // Дополнительная анимация для листьев при загрузке страницы        document.addEventListener('DOMContentLoaded', function() {            // Анимация появления контента            const content = document.querySelector('.content');            content.style.opacity = '0';            content.style.transform = 'translateY(30px)';                        setTimeout(() => {                content.style.transition = 'opacity 1s ease, transform 1s ease';                content.style.opacity = '1';                content.style.transform = 'translateY(0)';            }, 300);                        // Случайное мерцание листьев            const leaves = document.querySelectorAll('.leaf');            leaves.forEach(leaf => {                setInterval(() => {                    const randomOpacity = 0.1 + Math.random() * 0.3;                    leaf.style.opacity = randomOpacity;                }, 2000);            });                        // Интерактивность при наведении на основной текст            const highlights = document.querySelectorAll('.highlight');            highlights.forEach(highlight => {                highlight.addEventListener('mouseover', function() {                    this.style.transform = 'scale(1.05)';                    this.style.transition = 'transform 0.3s ease';                });                                highlight.addEventListener('mouseout', function() {                    this.style.transform = 'scale(1)';                });            });        });    </script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrenTEAM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .green-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 125, 50, 0.15) 0%, rgba(46, 125, 50, 0.05) 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 5s;
+        }
+        
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+        
+        .content {
+            text-align: center;
+            z-index: 10;
+            padding: 60px 40px;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(46, 125, 50, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(46, 125, 50, 0.1);
+        }
+        
+        .logo {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(90deg, #1b5e20, #2e7d32, #4caf50, #2e7d32, #1b5e20);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientMove 5s infinite linear;
+            text-shadow: 0 2px 10px rgba(46, 125, 50, 0.1);
+        }
+        
+        .message {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 40px;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            color: #2e7d32;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: rgba(76, 175, 80, 0.2);
+            z-index: -1;
+            border-radius: 3px;
+        }
+        
+        .bot-icon {
+            font-size: 7rem;
+            color: #2e7d32;
+            margin: 40px 0;
+            display: inline-block;
+            animation: gentleGlow 3s infinite ease-in-out;
+            filter: drop-shadow(0 5px 15px rgba(46, 125, 50, 0.2));
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+        }
+        
+        .decoration-1 {
+            top: 20px;
+            left: 20px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background-color: #2e7d32;
+            animation: morph 8s infinite ease-in-out;
+        }
+        
+        .decoration-2 {
+            bottom: 20px;
+            right: 20px;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background-color: #4caf50;
+            animation: morph 10s infinite ease-in-out reverse;
+        }
+        
+        .leaf {
+            position: absolute;
+            color: #4caf50;
+            font-size: 2rem;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .leaf-1 {
+            top: 10%;
+            left: 5%;
+            animation: sway 15s infinite ease-in-out;
+        }
+        
+        .leaf-2 {
+            bottom: 15%;
+            right: 8%;
+            animation: sway 18s infinite ease-in-out reverse;
+        }
+        
+        /* РђРЅРёРјР°С†РёРё */
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 30px) rotate(5deg);
+            }
+            50% {
+                transform: translate(-15px, 15px) rotate(-5deg);
+            }
+            75% {
+                transform: translate(10px, -10px) rotate(3deg);
+            }
+        }
+        
+        @keyframes gentleGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 8px rgba(46, 125, 50, 0.3));
+                transform: scale(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 20px rgba(46, 125, 50, 0.5));
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 300% 50%;
+            }
+        }
+        
+        @keyframes morph {
+            0%, 100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+            25% {
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+            }
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+            }
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+            }
+        }
+        
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
+        }
+        
+        /* РђРґР°РїС‚РёРІРЅРѕСЃС‚СЊ */
+        @media (max-width: 768px) {
+            .content {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+            
+            .logo {
+                font-size: 3.5rem;
+            }
+            
+            .message {
+                font-size: 2rem;
+            }
+            
+            .bot-icon {
+                font-size: 5rem;
+            }
+            
+            .circle-1, .circle-2, .circle-3 {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            .message {
+                font-size: 1.6rem;
+            }
+            
+            .bot-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Р”РµРєРѕСЂР°С‚РёРІРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ С„РѕРЅР° -->
+    <div class="green-circle circle-1"></div>
+    <div class="green-circle circle-2"></div>
+    <div class="green-circle circle-3"></div>
+    
+    <!-- РћСЃРЅРѕРІРЅРѕР№ РєРѕРЅС‚РµРЅС‚ -->
+    <div class="content">
+        <!-- Р”РµРєРѕСЂР°С‚РёРІРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ -->
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+        
+        <!-- Р›РѕРіРѕС‚РёРї РєРѕРјРїР°РЅРёРё СЃ РґРІРёР¶СѓС‰РёРјСЃСЏ РіСЂР°РґРёРµРЅС‚РѕРј -->
+        <div class="logo">OrenTEAM</div>
+        
+        <!-- РРєРѕРЅРєР° Р±РѕС‚Р° (Р·РЅР°С‡РѕРє СЂРѕР±РѕС‚Р° РєР°Рє Р±С‹Р»Рѕ СЂР°РЅСЊС€Рµ) -->
+        <div class="bot-icon">
+            <i class="fas fa-robot"></i>
+        </div>
+        
+        <!-- РћСЃРЅРѕРІРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ -->
+        <div class="message">
+            Рљ СЃРѕР¶Р°Р»РµРЅРёСЋ <span class="highlight">СЌС‚РѕРіРѕ Р±РѕС‚Р°</span> РЅРµС‚ РІ РЅР°Р»РёС‡РёРё,<br>
+            РЅРѕ <span class="highlight">СЃРєРѕСЂРѕ Р±СѓРґРµС‚</span>!
+        </div>
+    </div>
+
+    <script>
+        // РђРЅРёРјР°С†РёСЏ РїРѕСЏРІР»РµРЅРёСЏ РєРѕРЅС‚РµРЅС‚Р°
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.querySelector('.content');
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                content.style.transition = 'opacity 1s ease, transform 1s ease';
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+            }, 300);
+            
+            // РРЅС‚РµСЂР°РєС‚РёРІРЅРѕСЃС‚СЊ РїСЂРё РЅР°РІРµРґРµРЅРёРё РЅР° РѕСЃРЅРѕРІРЅРѕР№ С‚РµРєСЃС‚
+            const highlights = document.querySelectorAll('.highlight');
+            highlights.forEach(highlight => {
+                highlight.addEventListener('mouseover', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                highlight.addEventListener('mouseout', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // РРЅС‚РµСЂР°РєС‚РёРІРЅРѕСЃС‚СЊ РґР»СЏ РёРєРѕРЅРєРё Р±РѕС‚Р°
+            const botIcon = document.querySelector('.bot-icon');
+            botIcon.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            botIcon.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    </script>
+</body>
+</html>
